@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..900,0..100,0..1;1,9..144,400..900,0..100,0..1&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
 <link rel="stylesheet" href="assets/style.css">
-<link rel="stylesheet" href="assets/classico.css?v=7">
+<link rel="stylesheet" href="assets/classico.css?v=8">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Bakery", "name": "Panetta Bakery", "url": "https://panettabakery.com/", "telephone": "+39 0861 1640185", "email": "panetta.social@gmail.com", "hasMenu": "https://panettabakery.com/asportomenu/", "sameAs": ["https://www.instagram.com/panetta_bakery_colledara/"], "address": {"@type": "PostalAddress", "streetAddress": "Via Nuova 7", "addressLocality": "Colledara", "addressRegion": "TE", "addressCountry": "IT"}}</script>
 </head>
 <body>
@@ -91,6 +91,14 @@
 
 <section class="ht" id="hero-tessere">
   <div class="wrap">
+    <div class="stampa solo-m">
+      <div class="stampa__su">Colledara · Teramo</div>
+      <div class="stampa__nome" aria-hidden="true">Panetta</div>
+      <div class="stampa__sotto" aria-hidden="true">Bakery</div>
+      <div class="stampa__icone" aria-hidden="true"></div>
+      <p class="stampa__slogan">Eh sì, <em>tante cose buone.</em></p>
+    </div>
+    <figure class="foto solo-m stampa__foto"><img src="assets/img/foto/bakery-interno.jpg" alt="La sala della Panetta Bakery" decoding="async"></figure>
     <div class="tessere-ht" id="tessere" aria-label="Panetta Bakery"></div>
     <div class="ht-testo">
       <h1 style="--d:1.1s">Eh sì, <em>tante cose buone.</em></h1>
@@ -115,6 +123,15 @@
     torta: '<g class="anima-salta"><path class="p" d="M8 80 L92 80 L92 42 L8 64 Z"/><path class="t" d="M14 71 L86 71 M86 56 L14 72"/><path class="s" d="M76 34 C76 24 82 18 88 16"/><circle class="p" cx="74" cy="36" r="8"/></g>',
     tazza: '<path class="s anima-vapore" d="M40 22 C34 16 46 12 40 4"/><path class="s anima-vapore" d="M58 22 C52 16 64 12 58 4"/><path class="p" d="M18 32 L78 32 L72 78 C71 84 66 88 60 88 L36 88 C30 88 25 84 24 78 Z"/><path class="s" d="M76 42 C92 42 92 64 74 64"/><rect class="p" x="10" y="90" width="76" height="5" rx="2.5"/>'
   };
+  G.piatto = '<path class="s" d="M38 30 C33 24 43 20 38 12 M56 30 C51 24 61 20 56 12"/><ellipse class="p" cx="50" cy="62" rx="44" ry="16"/><ellipse class="tf" cx="50" cy="58" rx="26" ry="8"/>';
+  G.bicchiere = '<path class="p" d="M26 14 L74 14 Q74 50 50 56 Q26 50 26 14 Z"/><path class="s" d="M50 56 L50 84 M32 86 L68 86"/>';
+  function pgm(n) { return '<svg class="pg pg--m" viewBox="0 0 100 100" aria-hidden="true">' + G[n] + '</svg>'; }
+  var icStampa = document.querySelector('.stampa__icone');
+  if (icStampa) icStampa.innerHTML = ['pagnotta', 'cornetto', 'pizza', 'tazza', 'torta'].map(pgm).join('');
+  var icServ = ['cornetto', 'pagnotta', 'baguette', 'uovo', 'pizza', 'tazza', 'piatto', 'bicchiere'];
+  document.addEventListener('DOMContentLoaded', function () {
+  [].forEach.call(document.querySelectorAll('#servizi .tessera'), function (t, i) { if (icServ[i]) t.insertAdjacentHTML('afterbegin', pgm(icServ[i])); });
+  });
   var ordine = ['pagnotta', 'cornetto', 'pizza', 'uovo', 'ciambella', 'baguette', 'tazza', 'torta', 'pizza', 'ciambella', 'pagnotta', 'tazza', 'cornetto', 'uovo'];
   // colori: inchiostro, bordeaux, caramello, crema — alternati a scacchiera sfalsata
   var C = [['#5A2923', '#FFF9D6'], ['#904B4B', '#FFF9D6'], ['#E8B07F', '#5A2923'], ['#F7E6B5', '#904B4B']];

@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Panetta — progetto mobile</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..900,0..100,0..1;1,9..144,400..900,0..100,0..1&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
+<style>
+:root{--bg:#FFF9D6;--surface:#F7E6B5;--ink:#5A2923;--fg:#3A211C;--muted:#7B574B;--accent:#904B4B;--accent-2:#E8B07F;--cream:#FFF9D6;--line:rgba(90,41,35,.22);
+  --fd:"Fraunces",Georgia,serif;--fb:"EB Garamond",Garamond,Georgia,serif;--soft:"SOFT" 100,"WONK" 0;
+  --grana:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .29 0 0 0 0 .14 0 0 0 0 .1 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+*{box-sizing:border-box;margin:0}
+body{background:#E9D6A4;font-family:var(--fb);color:var(--fg);min-height:100vh}
+a{color:inherit}
+
+/* ---------- pagina di presentazione ---------- */
+.tavolo{display:grid;grid-template-columns:minmax(0,1fr) 410px minmax(0,1fr);gap:3rem;max-width:1400px;margin:0 auto;padding:2.4rem 2rem 4rem;align-items:start}
+.note{position:sticky;top:2rem;display:flex;flex-direction:column;gap:1.2rem}
+.note h1{font-family:var(--fd);font-weight:800;font-variation-settings:var(--soft);font-size:2rem;line-height:1.05;color:var(--ink)}
+.note p{font-size:1.05rem;line-height:1.5;color:var(--fg)}
+.nota{border-top:1px solid var(--line);padding-top:.8rem}
+.nota b{display:block;font-family:var(--fd);font-weight:700;color:var(--accent);font-size:1rem;margin-bottom:.2rem}
+.nota span{font-size:1rem;line-height:1.45}
+.telefono{width:410px;height:860px;border-radius:52px;background:#2a1512;padding:12px;box-shadow:0 40px 80px -30px rgba(58,33,28,.6),inset 0 0 0 2px #4a2a24;position:sticky;top:1.6rem}
+.schermo{width:100%;height:100%;border-radius:41px;overflow:hidden;position:relative;background:var(--bg)}
+.scorri{height:100%;overflow-y:auto;overflow-x:hidden;scrollbar-width:none}
+.scorri::-webkit-scrollbar{display:none}
+@media (max-width:1100px){.tavolo{grid-template-columns:minmax(0,1fr);justify-items:center}.note{position:static;max-width:410px}.note--dx{order:3}}
+/* sul telefono vero: niente cornice, il progetto a schermo intero */
+@media (max-width:520px){body{background:var(--bg)}.tavolo{padding:0;gap:0}.note{display:none}.telefono{width:100%;min-width:0;max-width:100vw;height:auto;border-radius:0;padding:0;background:none;box-shadow:none;position:static}.schermo{border-radius:0;overflow:visible}.scorri{height:auto;overflow:visible}}
+
+/* ---------- IL SITO MOBILE ---------- */
+.m{position:relative;background:var(--bg);background-image:var(--grana);background-size:220px;font-size:17px;line-height:1.55}
+.px{padding-inline:20px}
+.lbl{font-family:var(--fb);font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;color:var(--accent)}
+.h{font-family:var(--fd);font-weight:800;font-variation-settings:var(--soft),"opsz" 144;color:var(--ink);line-height:1.02;letter-spacing:-.01em}
+.h em{font-weight:600;color:var(--accent)}
+.bt{display:flex;align-items:center;justify-content:center;gap:.5rem;width:100%;min-height:52px;padding:.8rem 1rem;font-family:var(--fd);font-weight:650;font-variation-settings:var(--soft),"opsz" 14;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;background:var(--ink);color:var(--cream);border:1px solid var(--ink);outline:1px solid var(--line);outline-offset:3px}
+.bt--l{background:transparent;color:var(--ink)}
+.bt--c{background:var(--cream);color:var(--ink);border-color:var(--cream)}
+
+/* testata */
+.top{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;height:60px;padding-inline:16px;background:rgba(255,249,214,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top img{height:42px}
+.top__menu{display:flex;align-items:center;gap:.5rem;font-family:var(--fb);font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink)}
+.top__menu i{display:grid;gap:4px}.top__menu i::before,.top__menu i::after{content:"";width:20px;height:1.5px;background:var(--ink)}
+
+/* hero */
+.hero{padding-top:14px}
+.tiles{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;background:var(--ink);padding:2px;margin-inline:8px}
+.tl{aspect-ratio:1;background:var(--tb);color:var(--tf);display:grid;place-items:center;font-family:var(--fd);font-weight:900;font-variation-settings:"SOFT" 30,"opsz" 144;font-size:30px;position:relative;overflow:hidden}
+.tl > *{transition:transform .7s cubic-bezier(.75,0,.2,1)}
+.tl .g{position:absolute;inset:16%;transform:translateY(160%)}
+.tl.on span{transform:translateY(-160%)}.tl.on .g{transform:none}
+.tl svg{width:100%;height:100%;overflow:visible}
+.tl img{width:84%}
+.hero__t{padding:22px 20px 0}
+.hero__t .h{font-size:44px}
+.hero__p{margin-top:12px;font-size:17px;color:var(--fg)}
+/* scontrino */
+.scontrino{margin:22px 20px 0;background:var(--cream);border:1px solid var(--line);padding:16px 16px 18px;position:relative;
+  -webkit-mask:radial-gradient(circle 7px at 50% 0,#0000 98%,#000) top/18px 51% repeat-x,radial-gradient(circle 7px at 50% 100%,#0000 98%,#000) bottom/18px 51% repeat-x;
+  mask:radial-gradient(circle 7px at 50% 0,#0000 98%,#000) top/18px 51% repeat-x,radial-gradient(circle 7px at 50% 100%,#0000 98%,#000) bottom/18px 51% repeat-x}
+.scontrino dl{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:16px;margin-top:10px}
+.scontrino dt{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);padding-top:4px}
+.scontrino dd{color:var(--ink)}
+.scontrino .tot{display:flex;justify-content:space-between;align-items:baseline;border-top:1px dashed var(--line);margin-top:12px;padding-top:10px;font-family:var(--fd);font-weight:700;color:var(--ink)}
+
+/* numerino: separatore di sezione */
+.num{display:flex;align-items:center;gap:12px;padding:44px 20px 18px}
+.num__b{flex:none;display:grid;place-items:center;width:56px;height:40px;background:var(--accent);color:var(--cream);font-family:var(--fd);font-weight:800;font-variation-settings:var(--soft);font-size:20px;
+  -webkit-mask:radial-gradient(circle 5px at 0 50%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 5px at 100% 50%,#0000 98%,#000) right/51% 100% no-repeat;
+  mask:radial-gradient(circle 5px at 0 50%,#0000 98%,#000) left/51% 100% no-repeat,radial-gradient(circle 5px at 100% 50%,#0000 98%,#000) right/51% 100% no-repeat}
+.num__b small{font-size:10px;font-weight:600;margin-right:1px;align-self:center}
+.num__t{display:flex;flex-direction:column;gap:2px}
+.num__l{flex:1;height:0;border-top:1px dashed var(--line)}
+
+/* chi siamo */
+.chi{display:grid;grid-template-columns:1fr 112px;gap:16px;align-items:start}
+.chi .h{font-size:32px}
+.chi p{grid-column:1/-1;font-size:17px}
+.chi p::first-letter{font-family:var(--fd);font-weight:800;font-variation-settings:var(--soft);font-size:3.2em;float:left;line-height:.8;margin:.08em .1em 0 0;color:var(--accent)}
+.ft{border:1px solid var(--line);padding:5px;background:var(--cream)}
+.ft img{display:block;width:100%;aspect-ratio:var(--ar,1);object-fit:cover}
+
+/* piccola bakery */
+.chips{display:flex;gap:8px;overflow-x:auto;scroll-padding-inline:20px;padding:4px 20px 2px;scrollbar-width:none;scroll-snap-type:x mandatory}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;display:flex;align-items:center;gap:8px;padding:8px 14px 8px 8px;border:1px solid var(--line);background:var(--cream);font-family:var(--fd);font-style:italic;font-weight:500;font-size:17px;color:var(--ink);scroll-snap-align:start;white-space:nowrap}
+.chip i{width:30px;height:30px;display:grid;place-items:center;background:var(--tb)}
+.chip svg{width:22px;height:22px}
+.carte{display:flex;gap:12px;overflow-x:auto;scroll-padding-inline:20px;padding:16px 20px 6px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.carte::-webkit-scrollbar{display:none}
+.carta{flex:0 0 84%;scroll-snap-align:center;background:var(--cream);border:1px solid var(--line);padding:6px 6px 16px;display:flex;flex-direction:column;gap:10px}
+.carta img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.carta h3{font-family:var(--fd);font-weight:800;font-variation-settings:var(--soft);font-size:22px;color:var(--ink);padding-inline:10px}
+.carta h3 em{font-weight:500;color:var(--accent)}
+.carta p{font-size:16px;padding-inline:10px;line-height:1.45}
+.puntini{display:flex;justify-content:center;gap:6px;padding-top:10px}
+.puntini b{width:6px;height:6px;border-radius:50%;background:var(--line)}.puntini b:first-child{background:var(--accent);width:18px;border-radius:3px}
+.lievita{text-align:center;padding:34px 20px 0}
+.lievita .h{font-size:38px}
+
+/* servizi con pittogrammi */
+.serv{border-top:1px solid var(--line)}
+.serv a{display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:14px;padding:10px 20px;border-bottom:1px solid var(--line);text-decoration:none;min-height:60px}
+.serv i{width:44px;height:44px;display:grid;place-items:center;background:var(--tb)}
+.serv svg{width:30px;height:30px}
+.serv span{font-family:var(--fd);font-weight:700;font-variation-settings:var(--soft);font-size:19px;color:var(--ink)}
+.serv b{color:var(--accent);font-weight:400}
+
+/* galleria a scorrimento */
+.strip{display:flex;gap:10px;overflow-x:auto;padding:0 20px 4px;scroll-padding-inline:20px;scroll-snap-type:x mandatory;scrollbar-width:none}
+.strip::-webkit-scrollbar{display:none}
+.strip figure{flex:0 0 62%;scroll-snap-align:start}
+.strip figure:nth-child(odd){flex-basis:48%}
+.strip img{display:block;width:100%;aspect-ratio:3/4;object-fit:cover;border:1px solid var(--line);padding:4px;background:var(--cream)}
+.strip figcaption{font-family:var(--fd);font-style:italic;font-size:15px;color:var(--muted);padding-top:6px}
+.scorri-hint{display:flex;justify-content:flex-end;padding:8px 20px 0;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+
+/* catering */
+.cat{margin:0 12px;background:var(--ink);color:var(--cream);padding:26px 20px 22px;position:relative;overflow:hidden}
+.cat .lbl{color:var(--accent-2)}
+.cat .h{color:var(--cream);font-size:36px;font-style:italic;font-weight:700;margin-top:8px}
+.cat p{margin:12px 0 18px;color:rgba(255,249,214,.86);font-size:16px}
+.cat .bollo{position:absolute;right:-30px;top:-30px;width:130px;opacity:.9}
+.cat .bt + .bt{margin-top:12px}
+.cat .bt--l{color:var(--cream);border-color:rgba(255,249,214,.55);outline-color:rgba(255,249,214,.2)}
+
+/* dove */
+.dove{display:flex;flex-direction:column;gap:14px}
+.dove .h{font-size:32px}
+.dove .ft img{--ar:16/10}
+.riga{display:grid;grid-template-columns:96px 1fr;gap:10px;font-size:16px;padding:8px 0;border-bottom:1px solid var(--line)}
+.riga dt{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);padding-top:4px}
+.riga dd{color:var(--ink)}
+
+/* panificio */
+.pan{margin:44px 12px 0;padding:22px 20px;border:1px solid var(--ink);outline:1px solid var(--line);outline-offset:4px;display:grid;grid-template-columns:68px 1fr;gap:14px;align-items:center;text-decoration:none}
+.pan .h{font-size:22px}
+.sig{width:68px;height:68px;border:1px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-family:var(--fd);font-style:italic;font-weight:600;color:var(--ink);font-size:18px;outline:1px solid var(--ink);outline-offset:-7px}
+
+/* piede */
+.piede{margin-top:44px;background:var(--ink);color:var(--cream);padding:28px 20px 110px;font-size:15px}
+.piede .loghi{display:flex;gap:14px;margin-bottom:18px}.piede .loghi img{height:56px}
+.piede .lbl{color:var(--accent-2);display:block;margin:16px 0 4px}
+.piede small{display:block;margin-top:22px;opacity:.6;font-size:12px}
+
+/* barra in basso: le tre cose che servono a chi va al forno */
+.barra{position:sticky;bottom:0;z-index:30;display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:1px;background:var(--ink);border-top:1px solid var(--ink);padding-bottom:env(safe-area-inset-bottom);transform:translateY(100%);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.barra.su{transform:none}
+.barra a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:62px;background:var(--cream);color:var(--ink);text-decoration:none;font-family:var(--fd);font-weight:650;font-variation-settings:var(--soft),"opsz" 14;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase}
+.barra a:first-child{background:var(--ink);color:var(--cream)}
+.barra svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+
+/* pittogrammi */
+.pg .p{fill:var(--tf)}.pg .t{fill:none;stroke:var(--tb);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}.pg .tf{fill:var(--tb)}.pg .s{fill:none;stroke:var(--tf);stroke-width:5;stroke-linecap:round}
+</style>
+</head>
+<body>
+<div class="tavolo">
+
+  <aside class="note">
+    <h1>La home pensata per il telefono</h1>
+    <p>Non è la versione da computer rimpicciolita: è un percorso corto, a tappe, per chi sta andando al forno o vuole ordinare. Scorri dentro il telefono.</p>
+    <div class="nota"><b>1 · Il numerino</b><span>Ogni sezione si apre con il biglietto numerato del banco (N° 1, N° 2…), come la fila dal fornaio. Dà il ritmo e fa capire a che punto sei.</span></div>
+    <div class="nota"><b>2 · Lo scontrino</b><span>Subito sotto l'hero, indirizzo e telefono su uno scontrino col bordo dentellato: le informazioni che servono, senza cercarle.</span></div>
+    <div class="nota"><b>3 · Barra del banco</b><span>Dopo l'hero compare in basso, sotto il pollice: <em>Chiama · Dove · Menu</em>. Sempre a portata, su tutte le pagine.</span></div>
+  </aside>
+
+  <div class="telefono"><div class="schermo"><div class="scorri" id="scorri"><div class="m">
+
+    <header class="top"><img src="assets/img/logo-bakery.svg" alt="Panetta Bakery"><span class="top__menu">Menu <i></i></span></header>
+
+    <section class="hero" id="hero">
+      <div class="tiles" id="tiles"></div>
+      <div class="hero__t"><h1 class="h">Eh sì, <em>tante cose buone.</em></h1>
+        <p class="hero__p">Pane, pasta all'uovo, pizze, dolci e caffè a Colledara.</p></div>
+      <div class="scontrino">
+        <span class="lbl">Panetta Bakery</span>
+        <dl><dt>Dove</dt><dd>Via Nuova 7, Colledara (TE)</dd><dt>Tel.</dt><dd>0861 1640185</dd></dl>
+        <div class="tot"><span>Si mangia anche qui</span><span>✦</span></div>
+      </div>
+      <div class="px" style="margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:12px"><a class="bt" href="#">Chiama</a><a class="bt bt--l" href="#">Il menu</a></div>
+    </section>
+
+    <div class="num"><span class="num__b"><small>N°</small>1</span><div class="num__t"><span class="lbl">Chi siamo</span></div><span class="num__l"></span></div>
+    <section class="px chi">
+      <h2 class="h">Bakery <em>premium quality</em></h2>
+      <figure class="ft"><img src="assets/img/foto/bakery-primo.jpg" alt=""></figure>
+      <p>La Bakery nasce come punto vendita del Panificio di Cerchiara, con lo scopo di portare la tradizione ed il sapere a confronto con l'innovazione, in un percorso di qualità e sperimentazione.</p>
+    </section>
+
+    <div class="num"><span class="num__b"><small>N°</small>2</span><div class="num__t"><span class="lbl">Piccola bakery</span></div><span class="num__l"></span></div>
+    <section>
+      <h2 class="h px" style="font-size:32px">Siamo una <em>piccola bakery.</em></h2>
+      <p class="px" style="margin:10px 0 12px;color:var(--muted);font-style:italic">Ogni giorno facciamo:</p>
+      <div class="chips" id="chips"></div>
+      <div class="carte">
+        <article class="carta"><img src="assets/img/foto/bakery-lasagna.jpg" alt=""><h3>Fermati <em>a mangiare</em></h3><p>Ogni giorno primi piatti con la nostra pasta all'uovo, da gustare qui o da portare via.</p></article>
+        <article class="carta"><img src="assets/img/foto/bakery-pizza-calzone.jpg" alt=""><h3>Catering <em>per i tuoi eventi</em></h3><p>Feste, compleanni, ricorrenze: pizze, fritti, pane e dolci preparati per te.</p></article>
+      </div>
+      <div class="puntini"><b></b><b></b></div>
+      <div class="px" style="margin-top:18px"><a class="bt" href="#">Basta chiamare · 0861 1640185</a></div>
+      <div class="lievita"><p class="h">Fatto a mano,<br><em>ogni mattina.</em></p></div>
+    </section>
+
+    <div class="num"><span class="num__b"><small>N°</small>3</span><div class="num__t"><span class="lbl">I nostri servizi</span></div><span class="num__l"></span></div>
+    <nav class="serv" id="serv"></nav>
+
+    <div class="num"><span class="num__b"><small>N°</small>4</span><div class="num__t"><span class="lbl">Dal banco</span></div><span class="num__l"></span></div>
+    <div class="strip">
+      <figure><img src="assets/img/foto/bakery-cupcake.jpg" alt=""><figcaption>Cupcake</figcaption></figure>
+      <figure><img src="assets/img/foto/bakery-crostata.jpg" alt=""><figcaption>Crostata al pistacchio</figcaption></figure>
+      <figure><img src="assets/img/foto/bakery-biscotti.jpg" alt=""><figcaption>Biscotti e cantucci</figcaption></figure>
+      <figure><img src="assets/img/foto/bakery-pizza-calzone.jpg" alt=""><figcaption>Pizza e calzone</figcaption></figure>
+      <figure><img src="assets/img/foto/bakery-lasagna.jpg" alt=""><figcaption>Lasagna al forno</figcaption></figure>
+    </div>
+    <div class="scorri-hint">Scorri →</div>
+
+    <div class="num"><span class="num__b"><small>N°</small>5</span><div class="num__t"><span class="lbl">Catering</span></div><span class="num__l"></span></div>
+    <section class="cat">
+      <img class="bollo" src="assets/img/logo-bakery-chiaro.svg" alt="">
+      <span class="lbl">Per le tue occasioni</span>
+      <h2 class="h">Catering</h2>
+      <p>Pizze e fritti, pane, dolci e biscotti della tradizione abruzzese, preparati su richiesta. Raccontaci il tuo evento.</p>
+      <a class="bt bt--c" href="#">Chiama 0861 1640185</a><a class="bt bt--l" href="#">Scrivici una mail</a>
+    </section>
+
+    <div class="num"><span class="num__b"><small>N°</small>6</span><div class="num__t"><span class="lbl">Dove siamo</span></div><span class="num__l"></span></div>
+    <section class="px dove">
+      <h2 class="h">Ma dove <em>le trovo?</em></h2>
+      <figure class="ft"><img src="assets/img/foto/bakery-interno.jpg" alt="" style="aspect-ratio:16/10"></figure>
+      <dl><div class="riga"><dt>Indirizzo</dt><dd>Via Nuova 7, Colledara (TE)</dd></div><div class="riga"><dt>Telefono</dt><dd>0861 1640185</dd></div><div class="riga"><dt>Instagram</dt><dd>@panetta_bakery_colledara</dd></div></dl>
+      <a class="bt" href="#">Apri in Google Maps</a>
+    </section>
+
+    <a class="pan" href="#"><span class="sig">1968</span><span><span class="lbl">Il Panificio</span><br><span class="h">Panificio di Cerchiara, <em>fornai dal 1968 →</em></span></span></a>
+
+    <footer class="piede">
+      <div class="loghi"><img src="assets/img/logo-bakery-chiaro.svg" alt=""><img src="assets/img/logo-panificio-chiaro.png" alt=""></div>
+      <span class="lbl">Panetta Bakery</span>Via Nuova 7, Colledara (TE) · 0861 1640185
+      <span class="lbl">Panificio di Cerchiara</span>Via del Mulino, Cerchiara (TE) · 334 8919180
+      <small>© Panetta Bakery · Panificio di Cerchiara · Privacy · Cookie</small>
+    </footer>
+
+    <nav class="barra" id="barra">
+      <a href="#"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Chiama</a>
+      <a href="#"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Dove</a>
+      <a href="#"><svg viewBox="0 0 24 24"><path d="M5 3h11l3 3v15H5z M9 9h6 M9 13h6 M9 17h4"/></svg>Menu</a>
+    </nav>
+
+  </div></div></div></div>
+
+  <aside class="note note--dx">
+    <div class="nota"><b>4 · Si scorre di lato</b><span>Prodotti, le due carte (mangiare qui / catering) e le foto del banco scorrono col dito in orizzontale: la pagina resta corta, niente foto enormi una sotto l'altra.</span></div>
+    <div class="nota"><b>5 · Pittogrammi</b><span>Le icone delle tessere dell'hero tornano nei prodotti e nei servizi: un solo linguaggio grafico dall'inizio alla fine.</span></div>
+    <div class="nota"><b>6 · Misure da pollice</b><span>Pulsanti alti 52px, righe dei servizi 60px, testo a 17px, margini 20px costanti. Niente testo giustificato né parole spezzate.</span></div>
+    <div class="nota"><b>Da decidere</b><span>Gli orari andrebbero nello scontrino appena il cliente li manda.</span></div>
+  </aside>
+</div>
+
+<script>
+var G = {
+  pagnotta: '<path class="p" d="M10 74 C10 40 30 26 50 26 C70 26 90 40 90 74 Z"/><path class="t" d="M30 50 L40 40 M45 52 L57 40 M61 54 L71 44"/><rect class="p" x="6" y="78" width="88" height="6" rx="3"/>',
+  cornetto: '<path class="p" d="M8 66 C14 40 34 26 50 26 C66 26 86 40 92 66 C84 60 76 58 70 60 C64 52 58 50 50 50 C42 50 36 52 30 60 C24 58 16 60 8 66 Z"/><path class="t" d="M30 60 C34 44 40 34 46 28 M70 60 C66 44 60 34 54 28"/>',
+  ciambella: '<circle class="p" cx="50" cy="50" r="38"/><circle class="tf" cx="50" cy="50" r="13"/><path class="t" d="M50 22 l0 6 M72 34 l-5 3 M76 58 l-6 -1 M30 70 l4 -4 M26 42 l6 2 M60 74 l-2 -6"/>',
+  pizza: '<path class="p" d="M50 92 L14 22 Q50 6 86 22 Z"/><path class="t" d="M17 28 Q50 13 83 28"/><circle class="tf" cx="44" cy="40" r="6"/><circle class="tf" cx="60" cy="50" r="5"/><circle class="tf" cx="48" cy="64" r="4.5"/>',
+  uovo: '<path class="p" d="M50 12 C70 12 82 44 82 62 C82 80 68 90 50 90 C32 90 18 80 18 62 C18 44 30 12 50 12 Z"/><path class="t" d="M34 46 C36 36 40 30 44 26"/>',
+  torta: '<path class="p" d="M8 80 L92 80 L92 42 L8 64 Z"/><path class="t" d="M14 71 L86 71 M86 56 L14 72"/><path class="s" d="M76 34 C76 24 82 18 88 16"/><circle class="p" cx="74" cy="36" r="8"/>',
+  tazza: '<path class="s" d="M40 22 C34 16 46 12 40 4 M58 22 C52 16 64 12 58 4"/><path class="p" d="M18 32 L78 32 L72 78 C71 84 66 88 60 88 L36 88 C30 88 25 84 24 78 Z"/><path class="s" d="M76 42 C92 42 92 64 74 64"/>',
+  baguette: '<g transform="rotate(-24 50 51)"><rect class="p" x="6" y="38" width="88" height="26" rx="13"/><path class="t" d="M26 46 L36 56 M44 46 L54 56 M62 46 L72 56"/></g>',
+  piatto: '<path class="s" d="M38 30 C33 24 43 20 38 12 M56 30 C51 24 61 20 56 12"/><ellipse class="p" cx="50" cy="62" rx="44" ry="16"/><ellipse class="tf" cx="50" cy="58" rx="26" ry="8"/>',
+  bicchiere: '<path class="p" d="M26 14 L74 14 Q74 50 50 56 Q26 50 26 14 Z"/><path class="s" d="M50 56 L50 84 M32 86 L68 86"/>'
+};
+var C = [['#5A2923', '#FFF9D6'], ['#904B4B', '#FFF9D6'], ['#E8B07F', '#5A2923'], ['#F7E6B5', '#904B4B']];
+function pg(n, c) { return '<svg class="pg" viewBox="0 0 100 100" style="--tb:' + c[0] + ';--tf:' + c[1] + '">' + G[n] + '</svg>'; }
+
+// hero a tessere
+var L = 'PANETTABAKERY'.split(''), ord = ['pagnotta', 'cornetto', 'pizza', 'uovo', 'ciambella', 'baguette', 'tazza', 'torta', 'pizza', 'ciambella', 'pagnotta', 'tazza', 'cornetto'];
+document.getElementById('tiles').innerHTML = L.map(function (l, i) {
+  var c = C[(i % 7 + Math.floor(i / 7) * 2) % 4];
+  return '<div class="tl" style="--tb:' + c[0] + ';--tf:' + c[1] + '"><span>' + l + '</span><div class="g">' + pg(ord[i], c) + '</div></div>';
+}).join('') + '<div class="tl" style="--tb:#5A2923;--tf:#FFF9D6"><img src="assets/img/logo-bakery-chiaro.svg" alt=""></div>';
+var tl = [].slice.call(document.querySelectorAll('.tl')).slice(0, 13);
+function onda(on) { tl.forEach(function (t, i) { setTimeout(function () { t.classList.toggle('on', on); }, (i % 7) * 80 + Math.floor(i / 7) * 40); }); }
+setTimeout(function () { onda(true); setTimeout(function () { onda(false); }, 2400); setInterval(function () { onda(true); setTimeout(function () { onda(false); }, 2400); }, 6000); }, 1200);
+
+// prodotti
+document.getElementById('chips').innerHTML = [['ciambella', 'Biscotti'], ['cornetto', 'Dolci'], ['torta', 'Torte'], ['uovo', 'Pasta fresca all\'uovo']].map(function (p, i) {
+  var c = C[i % 4]; return '<span class="chip"><i style="--tb:' + c[0] + '">' + pg(p[0], c) + '</i>' + p[1] + '</span>';
+}).join('');
+// servizi
+document.getElementById('serv').innerHTML = [['cornetto', 'Consumazione sul posto'], ['pagnotta', 'Asporto'], ['baguette', 'Pane'], ['uovo', 'Pasta all\'uovo'], ['pizza', 'Pizze'], ['tazza', 'Caffetteria'], ['piatto', 'Primi piatti'], ['bicchiere', 'Aperitivi']].map(function (s, i) {
+  var c = C[i % 4]; return '<a href="#"><i style="--tb:' + c[0] + '">' + pg(s[0], c) + '</i><span>' + s[1] + '</span><b>→</b></a>';
+}).join('');
+// la barra compare dopo l'hero
+var sc = document.getElementById('scorri'), barra = document.getElementById('barra'), hero = document.getElementById('hero');
+function controlla() { var r = hero.getBoundingClientRect(), top = getComputedStyle(sc).overflowY === 'auto' ? sc.getBoundingClientRect().top : 0; barra.classList.toggle('su', r.bottom - top < 80); }
+sc.addEventListener('scroll', controlla); addEventListener('scroll', controlla); controlla();
+document.querySelectorAll('a[href="#"]').forEach(function (a) { a.addEventListener('click', function (e) { e.preventDefault(); }); });
+</script>
+</body>
+</html>

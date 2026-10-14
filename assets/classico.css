@@ -336,3 +336,94 @@ h1 em,h2 em,.catering__titolo,.menu-top h1{font-style:italic;font-weight:700;fon
   .a__testa{margin-bottom:1.6rem}
   .lievita__sotto{letter-spacing:.16em}
 }
+
+/* =====================================================
+   TELEFONO — "SACCHETTO": tutto stampato a un colore su carta kraft
+   ===================================================== */
+.solo-m,.pg--m{display:none}
+@media (max-width:640px){
+  :root{
+    --kr:#D9B784;--inc:#7A3A36;
+    --bg:var(--kr);--surface:var(--kr);--kraft:var(--kr);
+    --ink:var(--inc);--fg:var(--inc);--muted:var(--inc);--accent:var(--inc);--accent-2:#F3DFB8;
+    --cream:#F3DFB8;--line:rgba(122,58,54,.4);
+  }
+  body{background:var(--kr) repeating-linear-gradient(90deg,rgba(90,41,35,.035) 0 2px,transparent 2px 7px)}
+  .header,.burger nav{background:var(--kr)}
+  .sez--tinta,.sez--scura{background:transparent}
+  .sez--tinta::before,.sez--tinta::after,.fregio{display:none}
+  .label{color:var(--inc)}
+  .btn{background:var(--inc);color:#F3DFB8;border-color:var(--inc);outline:0}
+  .btn--line{background:transparent;color:var(--inc);border:1.5px solid var(--inc)}
+  .hero__link a:not(.btn){color:var(--inc)}
+
+  /* foto in bicromia, come stampate sulla carta */
+  .foto{background:var(--inc)!important;padding:0;border:1.5px solid var(--inc);isolation:isolate;box-shadow:0 0 0 5px var(--kr),0 0 0 6.5px var(--inc)}
+  .foto img{filter:grayscale(1) contrast(1.2) brightness(1.08);mix-blend-mode:screen}
+  .foto::after{inset:0;background:var(--kr);mix-blend-mode:multiply;box-shadow:none}
+  .pg--m{display:block;--tb:var(--kr);--tf:var(--inc)}
+
+  /* hero: la stampa del sacchetto al posto delle tessere */
+  .solo-m{display:block}
+  .ht .tessere-ht,.ht .ht-testo h1{display:none!important}
+  .ht{border:0;padding-top:1.1rem}
+  .stampa{border:2px solid var(--inc);outline:1px solid var(--inc);outline-offset:4px;padding:1.8rem 1rem 1.6rem;text-align:center;color:var(--inc);margin:4px}
+  .stampa__su{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase}
+  .stampa__nome{font-family:var(--f-display);font-style:italic;font-weight:800;font-variation-settings:"SOFT" 100,"WONK" 1,"opsz" 144;font-size:clamp(4rem,22vw,5.4rem);line-height:.9;letter-spacing:-.02em;margin-top:.5rem}
+  .stampa__sotto{display:flex;align-items:center;justify-content:center;gap:.6rem;font-family:var(--f-display);font-weight:700;font-variation-settings:"SOFT" 100;font-size:.95rem;letter-spacing:.42em;text-transform:uppercase;margin-top:.3rem;padding-left:.42em}
+  .stampa__sotto::before,.stampa__sotto::after{content:"";width:26px;height:1px;background:currentColor}
+  .stampa__icone{display:flex;justify-content:center;gap:1rem;margin:1.3rem 0 .2rem}
+  .stampa__icone svg{width:36px;height:36px}
+  .stampa__slogan{font-family:var(--f-display);font-weight:500;font-variation-settings:"SOFT" 100;font-size:1.45rem;line-height:1.15;margin-top:1rem}
+  .stampa__foto{--ar:4/3;margin:1.4rem 0 0}
+  .ht-testo{margin-top:1.4rem}
+  .ht-testo .ht-info{margin-top:0;text-align:center}
+  .ht-testo .ht-info .label{justify-content:center}
+  .ht-testo .hero__link{justify-content:center}
+
+  /* nastro e piede: stampa piena, testo in negativo */
+  .nastro span{color:#F3DFB8}
+  .footer{background:var(--inc);color:#F3DFB8}
+  .footer::before{content:none}
+  .footer .label{color:#F3DFB8;opacity:.8}
+
+  /* chi siamo */
+  .chi__testo{border-color:var(--inc)}
+  .capolettera::first-letter{color:var(--inc)}
+
+  /* piccola bakery: listino a puntini, coppia di foto, timbro col numero */
+  .a__testa{text-align:center}
+  .prodotti{display:block;border:0;padding:0;margin:0 0 1.8rem;text-align:left}
+  .prodotti .label{display:flex;margin-bottom:.4rem}
+  .prodotti span:not(.label){display:flex;align-items:baseline;gap:.5rem;padding:.35rem 0;font-size:1.3rem}
+  .prodotti span:not(.label)::after{content:"";flex:1;border-bottom:2px dotted rgba(122,58,54,.55);transform:translateY(-5px)}
+  .a__grid{grid-template-columns:1fr 1fr!important;gap:.9rem}
+  .a__e,.a__col p{display:none}
+  .a__col{gap:.6rem;border:1.5px solid var(--inc);padding:5px 5px .7rem}
+  .a__col .foto{--ar:3/4;box-shadow:none;border:0}
+  .a__col h3{font-size:1rem;text-align:center;line-height:1.15}
+  .a__col h3 em{display:block;font-weight:400;font-size:.9rem;margin-top:.15rem;color:var(--inc)}
+  .a__piede{flex-direction:column;gap:0;border:0;margin-top:1.8rem;padding:0}
+  .a__piede p{order:2;display:none}
+  .a__piede .btn{width:auto;min-width:15rem;flex-direction:column;background:transparent;color:var(--inc);border:2px dashed var(--inc);outline:0;padding:.9rem 1.2rem;transform:rotate(-2deg);font-size:1.5rem;letter-spacing:.02em;text-transform:none;font-weight:800}
+  .a__piede .btn::before{content:"Basta chiamare";display:block;font-family:var(--f-ui);font-weight:400;font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;margin-bottom:.15rem}
+  .lievita__frase,.lievita__frase em span{color:var(--inc)}
+
+  /* servizi: griglia di icone stampate */
+  .tessere{grid-template-columns:repeat(4,minmax(0,1fr))!important;border-top:1.5px solid var(--inc);border-left:1.5px solid var(--inc)}
+  .tessera{display:flex!important;flex-direction:column;align-items:center;justify-content:flex-start;gap:.4rem;padding:.8rem .15rem .7rem!important;border:0!important;border-right:1.5px solid var(--inc)!important;border-bottom:1.5px solid var(--inc)!important;min-height:0}
+  .tessera::before,.tessera__go{display:none}
+  .tessera .pg--m{width:34px;height:34px}
+  .tessera__t{font-family:var(--f-ui);font-weight:400;font-size:.74rem!important;line-height:1.15;text-align:center;letter-spacing:.02em}
+  .tessera::after{background:var(--inc)}
+
+  /* catering: niente timbro grande, il testo basta */
+  .catering__arte{display:none}
+  .sez--scura{border-block:2px solid var(--inc)}
+  .sez--scura .label,.sez--scura .lead,.catering__titolo{color:var(--inc)}
+  .sez--scura .btn--crema{background:var(--inc);color:#F3DFB8;border-color:var(--inc)}
+  .sez--scura .btn--line{color:var(--inc);border-color:var(--inc)}
+
+  /* loghi del piede ristampati nel colore del sacchetto */
+  .footer__loghi img{filter:brightness(0) invert(.9) sepia(.4)}
+}
