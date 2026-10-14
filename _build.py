@@ -15,7 +15,7 @@ TEL_P = ("334 8919180", "+393348919180")
 EMAIL = "panetta.social@gmail.com"
 INSTA = "https://www.instagram.com/panetta_bakery_colledara/"
 MAPS_B = "https://www.google.com/maps/search/?api=1&query=Panetta+Bakery+Via+Nuova+7+Colledara"
-MAPS_P = "https://www.google.com/maps/search/?api=1&query=Via+del+Mulino+Cerchiara+Isola+del+Gran+Sasso"
+MAPS_P = "https://www.google.com/maps/search/?api=1&query=Panificio+di+Cerchiara+Via+del+Mulino+Cerchiara+TE"
 IUB = "https://www.iubenda.com/privacy-policy/91127097"
 
 # pagine: chiave -> percorso (stessi URL del vecchio sito)
@@ -39,8 +39,8 @@ LD_BAKERY = {"@context": "https://schema.org", "@type": "Bakery", "name": "Panet
 LD_PANIFICIO = {"@context": "https://schema.org", "@type": "Bakery", "name": "Panificio di Cerchiara",
                 "alternateName": "Panificio di Cerchiara di Danilo Panetta", "foundingDate": "1968",
                 "url": DOMINIO + "/panificiodicerchiara/", "telephone": "+39 334 8919180", "email": EMAIL,
-                "address": {"@type": "PostalAddress", "streetAddress": "Via del Mulino, Cerchiara",
-                            "addressLocality": "Isola del Gran Sasso d'Italia", "addressRegion": "TE", "addressCountry": "IT"}}
+                "address": {"@type": "PostalAddress", "streetAddress": "Via del Mulino",
+                            "addressLocality": "Cerchiara", "addressRegion": "TE", "addressCountry": "IT"}}
 
 def pagina(chiave, titolo, desc, sezione, corpo, ld=None, script=""):
     d = PAGINE[chiave].count("/")
@@ -97,7 +97,7 @@ def pagina(chiave, titolo, desc, sezione, corpo, ld=None, script=""):
   <div class="footer__grid">
     <div class="stack"><div class="footer__loghi"><img src="{b}assets/img/logo-bakery-chiaro.svg" alt="Panetta Bakery"><img src="{b}assets/img/logo-panificio-chiaro.png" alt="Panificio di Cerchiara"></div><p><a href="mailto:{EMAIL}">{EMAIL}</a><br><a href="{INSTA}" target="_blank" rel="noopener">Instagram</a></p></div>
     <div class="stack"><span class="label">Panetta Bakery</span><address>Via Nuova 7<br>Colledara (TE), Abruzzo</address><p><a href="tel:{TEL_B[1]}">{TEL_B[0]}</a></p></div>
-    <div class="stack"><span class="label">Panificio di Cerchiara</span><address>Via del Mulino, Cerchiara<br>Isola del Gran Sasso (TE)</address><p><a href="tel:{TEL_P[1]}">{TEL_P[0]}</a></p></div>
+    <div class="stack"><span class="label">Panificio di Cerchiara</span><address>Via del Mulino<br>Cerchiara (TE)</address><p><a href="tel:{TEL_P[1]}">{TEL_P[0]}</a></p></div>
   </div>
   <div class="footer__base">
     <span>© Panetta Bakery · Panificio di Cerchiara</span>
@@ -267,7 +267,7 @@ def panificio():
     <span class="label">Info &amp; ordini</span>
     <h2>Panificio di Cerchiara</h2>
     <dl class="info">
-      <dt>Indirizzo</dt><dd>Via del Mulino, Cerchiara, Isola del Gran Sasso (TE)</dd>
+      <dt>Indirizzo</dt><dd>Via del Mulino, Cerchiara (TE)</dd>
       <dt>Telefono</dt><dd><a href="tel:{TEL_P[1]}">{TEL_P[0]}</a></dd>
       <dt>Email</dt><dd><a href="mailto:{EMAIL}">{EMAIL}</a></dd>
     </dl>

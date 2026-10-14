@@ -273,3 +273,26 @@ h1 em,h2 em,.catering__titolo,.menu-top h1{font-style:italic;font-weight:700;fon
 .nastro--vuoto span{font-family:var(--f-display);font-weight:600;font-variation-settings:"SOFT" 100,"WONK" 1}
 .catering__badge text:nth-of-type(2){font-family:var(--f-display);font-weight:700;font-size:54px}
 .sigillo > text{font-family:var(--f-display);font-weight:700;font-size:22px}
+
+/* ===== BLOCCO PICCOLA BAKERY (home) ===== */
+.piccola{padding-block:clamp(2.6rem,6vw,4.4rem)}
+.piccola h2{font-size:clamp(1.9rem,3.6vw,2.8rem);font-weight:700}
+.piccola h2 em{font-weight:500;color:var(--accent)}
+.prodotti{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:.35rem 1rem;font-family:var(--f-display);font-style:italic;font-size:clamp(1.15rem,2vw,1.4rem);color:var(--ink);margin:0 auto 2.4rem;padding-block:1rem;border-block:1px solid var(--line);max-width:52rem}
+.prodotti .label{font-style:normal;flex-basis:100%;text-align:center;justify-content:center}
+.prodotti i{font-style:normal;color:var(--accent);font-size:.7em}
+.a__testa{text-align:center;max-width:40rem;margin:0 auto 2.4rem}
+.a__testa p{color:var(--muted);margin-top:.6rem}
+.a__grid{display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(1.2rem,3vw,2.4rem);align-items:stretch}
+.a__col{display:flex;flex-direction:column;gap:1rem}
+.a__col .foto{--ar:4/3}
+.a__col h3{font-size:1.5rem;font-weight:700}
+.a__col h3 em{font-weight:500;color:var(--accent)}
+.a__col p{font-size:1.05rem;color:var(--fg)}
+.a__e{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6rem;color:var(--accent)}
+.a__e span{font-family:var(--f-display);font-style:italic;font-size:2.2rem;line-height:1}
+.a__e i{width:1px;flex:1;background:var(--line)}
+.a__piede{margin-top:2.6rem;padding-top:1.6rem;border-top:1px solid var(--line);display:flex;justify-content:center;align-items:center;gap:1.4rem;flex-wrap:wrap}
+.a__piede p{font-family:var(--f-display);font-style:italic;font-size:1.35rem;color:var(--ink)}
+@media (max-width:760px){.a__grid{grid-template-columns:1fr}.a__e{flex-direction:row}.a__e i{height:1px;width:auto}}
+
