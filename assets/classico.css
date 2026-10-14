@@ -296,3 +296,18 @@ h1 em,h2 em,.catering__titolo,.menu-top h1{font-style:italic;font-weight:700;fon
 .a__piede p{font-family:var(--f-display);font-style:italic;font-size:1.35rem;color:var(--ink)}
 @media (max-width:760px){.a__grid{grid-template-columns:1fr}.a__e{flex-direction:row}.a__e i{height:1px;width:auto}}
 
+
+/* ===== LIEVITA: scritta animata sotto il blocco piccola bakery ===== */
+.lievita{margin-top:clamp(2.6rem,6vw,4.4rem);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.9rem;text-align:center}
+.lievita__frase{font-family:var(--f-display);font-size:clamp(2rem,5.4vw,4.2rem);line-height:1;color:var(--ink);letter-spacing:-.01em;white-space:nowrap}
+.lievita__frase span{display:inline-block;transform-origin:50% 100%;font-variation-settings:"SOFT" 0,"WONK" 0,"opsz" 144;font-weight:400;transform:scale(1,.55) translateY(20%);opacity:0;transition:none}
+.lievita__frase em span{color:var(--accent);font-style:italic}
+.lievita.vai .lievita__frase span{animation:lievita-l 1.6s cubic-bezier(.25,.9,.3,1.25) forwards, respira 3.6s ease-in-out infinite;animation-delay:calc(var(--k) * 55ms), calc(1.8s + var(--k) * 90ms)}
+@keyframes lievita-l{0%{opacity:0;transform:scale(1,.55) translateY(20%);font-variation-settings:"SOFT" 0,"WONK" 0,"opsz" 144;font-weight:400}
+  60%{opacity:1}100%{opacity:1;transform:none;font-variation-settings:"SOFT" 100,"WONK" 0,"opsz" 144;font-weight:800}}
+@keyframes respira{0%,100%{transform:none;font-weight:800}50%{transform:scale(1.03,1.06);font-weight:900}}
+.lievita__sotto{font-family:var(--f-ui);font-size:.74rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);opacity:0;transition:opacity 1s 1.4s}
+.lievita.vai .lievita__sotto{opacity:1}
+
+@media (prefers-reduced-motion:reduce){.lievita__frase span{animation:none!important;opacity:1;transform:none;font-weight:800;font-variation-settings:"SOFT" 100,"WONK" 0,"opsz" 144}.lievita__sotto{opacity:1}}
+@media (max-width:640px){.lievita__frase em{display:block;margin-top:.1em}.lievita__frase{font-size:clamp(2.2rem,11vw,3rem)}}

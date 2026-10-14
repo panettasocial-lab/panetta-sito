@@ -21,7 +21,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..900,0..100,0..1;1,9..144,400..900,0..100,0..1&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
 <link rel="stylesheet" href="assets/style.css">
-<link rel="stylesheet" href="assets/classico.css?v=5">
+<link rel="stylesheet" href="assets/classico.css?v=6">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Bakery", "name": "Panetta Bakery", "url": "https://panettabakery.com/", "telephone": "+39 0861 1640185", "email": "panetta.social@gmail.com", "hasMenu": "https://panettabakery.com/asportomenu/", "sameAs": ["https://www.instagram.com/panetta_bakery_colledara/"], "address": {"@type": "PostalAddress", "streetAddress": "Via Nuova 7", "addressLocality": "Colledara", "addressRegion": "TE", "addressCountry": "IT"}}</script>
 </head>
 <body>
@@ -186,7 +186,19 @@
     <div class="a__col rv" style="--i:1"><figure class="foto"><img src="assets/img/foto/bakery-pizza-calzone.jpg" alt="Pizza e calzone per il catering" loading="lazy" decoding="async"></figure><h3>Catering <em>per i tuoi eventi</em></h3><p>Feste, compleanni, ricorrenze: pizze, fritti, pane e dolci preparati per te.</p></div>
   </div>
   <div class="a__piede rv"><p>Per tutto, basta chiamare.</p><a class="btn" href="tel:+3908611640185">Chiama 0861 1640185</a></div>
+  <div class="lievita" id="lievita"><p class="lievita__frase" data-testo="Fatto a mano, |ogni mattina." aria-label="Fatto a mano, ogni mattina."></p><div class="lievita__sotto">Colledara · dal forno di Cerchiara</div></div>
 </div></section>
+<script>
+(function () {
+  var box = document.getElementById('lievita'), fr = box.querySelector('.lievita__frase'), k = 0;
+  fr.innerHTML = fr.dataset.testo.split('|').map(function (t, j) {
+    var s = t.split('').map(function (ch) { return ch === ' ' ? ' ' : '<span aria-hidden="true" style="--k:' + (k++) + '">' + ch + '</span>'; }).join('');
+    return j === 1 ? '<em>' + s + '</em>' : s;
+  }).join('');
+  if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) { box.classList.add('vai'); return; }
+  new IntersectionObserver(function (es, o) { es.forEach(function (e) { if (e.isIntersecting) { box.classList.add('vai'); o.disconnect(); } }); }, { threshold: .4 }).observe(box);
+})();
+</script>
 
 <section class="sez" id="servizi"><div class="wrap stack-lg">
   <div class="ornato rv" aria-hidden="true"><svg viewBox="0 0 120 30"><g><path pathLength="1" d="M62 15 L112 15"/><path pathLength="1" d="M68 15 Q69 7 77 6 Q76 13 68 15Z"/><path pathLength="1" d="M68 15 Q69 23 77 24 Q76 17 68 15Z"/><path pathLength="1" d="M77 6 L83 2"/><path pathLength="1" d="M77 24 L83 28"/><path pathLength="1" d="M76 15 Q77 7 85 6 Q84 13 76 15Z"/><path pathLength="1" d="M76 15 Q77 23 85 24 Q84 17 76 15Z"/><path pathLength="1" d="M85 6 L91 2"/><path pathLength="1" d="M85 24 L91 28"/><path pathLength="1" d="M84 15 Q85 7 93 6 Q92 13 84 15Z"/><path pathLength="1" d="M84 15 Q85 23 93 24 Q92 17 84 15Z"/><path pathLength="1" d="M93 6 L99 2"/><path pathLength="1" d="M93 24 L99 28"/><path pathLength="1" d="M92 15 Q93 7 101 6 Q100 13 92 15Z"/><path pathLength="1" d="M92 15 Q93 23 101 24 Q100 17 92 15Z"/><path pathLength="1" d="M101 6 L107 2"/><path pathLength="1" d="M101 24 L107 28"/><path pathLength="1" d="M100 15 Q101 7 109 6 Q108 13 100 15Z"/><path pathLength="1" d="M100 15 Q101 23 109 24 Q108 17 100 15Z"/><path pathLength="1" d="M109 6 L115 2"/><path pathLength="1" d="M109 24 L115 28"/><path pathLength="1" d="M108 15 Q112 10 118 15 Q112 20 108 15Z"/></g><g transform="translate(120 0) scale(-1 1)"><path pathLength="1" d="M62 15 L112 15"/><path pathLength="1" d="M68 15 Q69 7 77 6 Q76 13 68 15Z"/><path pathLength="1" d="M68 15 Q69 23 77 24 Q76 17 68 15Z"/><path pathLength="1" d="M77 6 L83 2"/><path pathLength="1" d="M77 24 L83 28"/><path pathLength="1" d="M76 15 Q77 7 85 6 Q84 13 76 15Z"/><path pathLength="1" d="M76 15 Q77 23 85 24 Q84 17 76 15Z"/><path pathLength="1" d="M85 6 L91 2"/><path pathLength="1" d="M85 24 L91 28"/><path pathLength="1" d="M84 15 Q85 7 93 6 Q92 13 84 15Z"/><path pathLength="1" d="M84 15 Q85 23 93 24 Q92 17 84 15Z"/><path pathLength="1" d="M93 6 L99 2"/><path pathLength="1" d="M93 24 L99 28"/><path pathLength="1" d="M92 15 Q93 7 101 6 Q100 13 92 15Z"/><path pathLength="1" d="M92 15 Q93 23 101 24 Q100 17 92 15Z"/><path pathLength="1" d="M101 6 L107 2"/><path pathLength="1" d="M101 24 L107 28"/><path pathLength="1" d="M100 15 Q101 7 109 6 Q108 13 100 15Z"/><path pathLength="1" d="M100 15 Q101 23 109 24 Q108 17 100 15Z"/><path pathLength="1" d="M109 6 L115 2"/><path pathLength="1" d="M109 24 L115 28"/><path pathLength="1" d="M108 15 Q112 10 118 15 Q112 20 108 15Z"/></g></svg></div>
