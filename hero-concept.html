@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Panetta — concept hero</title>
+<meta name="description" content="Dalla tradizione abruzzese dei prodotti del forno: &quot;Panificio di Cerchiara.&quot; La bakery, con consumazione sul posto e asporto, propone la vendita di: pane, pasta all&#x27;uovo, pizze, caffetteria, primi piatti e aperitivi.">
+<link rel="canonical" href="https://panettabakery.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Panetta Bakery">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Panetta Bakery — Colledara (TE)">
+<meta property="og:description" content="Dalla tradizione abruzzese dei prodotti del forno: &quot;Panificio di Cerchiara.&quot; La bakery, con consumazione sul posto e asporto, propone la vendita di: pane, pasta all&#x27;uovo, pizze, caffetteria, primi piatti e aperitivi.">
+<meta property="og:url" content="https://panettabakery.com/">
+<meta property="og:image" content="https://panettabakery.com/assets/img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#904B4B">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,400..900,0..100,0..1;1,9..144,400..900,0..100,0..1&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/classico.css?v=4">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Bakery", "name": "Panetta Bakery", "url": "https://panettabakery.com/", "telephone": "+39 0861 1640185", "email": "panetta.social@gmail.com", "hasMenu": "https://panettabakery.com/asportomenu/", "sameAs": ["https://www.instagram.com/panetta_bakery_colledara/"], "address": {"@type": "PostalAddress", "streetAddress": "Via Nuova 7", "addressLocality": "Colledara", "addressRegion": "TE", "addressCountry": "IT"}}</script>
+</head>
+<body>
+<a class="sr" href="#contenuto">Vai al contenuto</a>
+<header class="header"><div class="wrap" style="position:relative">
+  <a class="logo" href="proposta.html?v=3"><img src="assets/img/logo-bakery.svg" alt="Panetta Bakery" class="logo--logo-bakery"></a>
+  <nav class="nav" aria-label="Principale"><a href="proposta.html?v=3" aria-current="page">La Bakery</a><a href="panificiodicerchiara/proposta.html?v=3">Il Panificio</a><a href="asportomenu/proposta.html?v=3">Menu asporto</a><a class="btn btn--sm" href="tel:+3908611640185">Chiamaci</a></nav>
+  <details class="burger"><summary>Menu</summary><nav aria-label="Principale mobile"><a href="proposta.html?v=3">La Bakery</a><a href="panificiodicerchiara/proposta.html?v=3">Il Panificio</a><a href="asportomenu/proposta.html?v=3">Menu asporto</a><a href="#contatti">Contatti</a><a href="tel:+3908611640185">Chiamaci</a></nav></details>
+</div></header>
+<div class="fregio" aria-hidden="true"></div>
+<main id="contenuto">
+
+<style>
+/* ===== HERO CONCEPT — "Il forno" ===== */
+.forno{position:relative;overflow:hidden;min-height:calc(100svh - 80px);display:grid;align-items:center;
+  background:var(--kraft) var(--fibre);border-bottom:1px solid var(--line);padding-block:clamp(2.5rem,5vw,4rem)}
+.forno::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(55% 75% at 74% 62%,rgba(232,176,127,.35),transparent 70%),radial-gradient(120% 90% at 50% 0%,transparent 60%,rgba(90,41,35,.12))}
+.forno .wrap{position:relative;z-index:2;width:100%}
+.forno__grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+@media (max-width:860px){.forno__grid{grid-template-columns:1fr}.forno{min-height:0}}
+
+.forno__lato{position:absolute;left:clamp(6px,1.4vw,22px);top:50%;z-index:2;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;
+  font-family:var(--f-ui);font-size:.66rem;letter-spacing:.34em;text-transform:uppercase;color:var(--accent);opacity:0;animation:entra 1s ease 1.6s forwards}
+@media (max-width:860px){.forno__lato{display:none}}
+
+/* titolo che lievita */
+.lievita{font-size:clamp(2.6rem,5.2vw,4.4rem);line-height:1.02}
+.lievita .w{display:inline-block;transform-origin:50% 100%;animation:lievita 1.25s cubic-bezier(.2,1.25,.35,1) both;animation-delay:calc(.3s + var(--d) * 85ms)}
+.lievita em .w{animation-name:lievita-em}
+@keyframes lievita{0%{opacity:0;transform:translateY(.4em) scale(.92,.5);filter:blur(7px)}55%{opacity:1;filter:blur(0)}100%{transform:none}}
+@keyframes lievita-em{0%{opacity:0;transform:translateY(.4em) scale(.92,.5) rotate(-4deg);filter:blur(7px)}55%{opacity:1;filter:blur(0)}100%{transform:none}}
+.forno .entra{opacity:0;animation:entra 1s cubic-bezier(.2,.7,.2,1) forwards;animation-delay:var(--dl,1s)}
+@keyframes entra{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.forno .lead{max-width:30rem}
+
+/* la scena del forno */
+.scena{position:relative;width:min(100%,640px);margin-inline:auto;aspect-ratio:1}
+.scena svg{width:100%;height:100%;overflow:visible;display:block}
+.strato{transition:transform .9s cubic-bezier(.2,.7,.2,1);transform-box:view-box}
+.arco path,.arco line{fill:none;stroke:var(--ink);stroke-width:1.3;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:disegna 2s cubic-bezier(.7,0,.2,1) forwards}
+.arco .fine{stroke-width:.8;opacity:.6;animation-delay:.25s}
+.arco .mattone{stroke-width:.8;opacity:.55;animation-duration:.6s;animation-delay:calc(.9s + var(--k) * 40ms)}
+.arco text{font-family:var(--f-ui);font-size:15px;letter-spacing:.32em;fill:var(--accent);opacity:0;animation:entra-t 1.4s ease 1.3s forwards}
+@keyframes entra-t{from{opacity:0;letter-spacing:.7em}to{opacity:1;letter-spacing:.32em}}
+
+.fascia-arco{fill:#F7E6B5;opacity:0;animation:entra-f 1.2s ease .7s forwards}
+@keyframes entra-f{to{opacity:.85}}
+.bagliore{transform-box:fill-box;transform-origin:50% 100%;opacity:0;animation:accendi 1.4s ease .8s forwards,brace 4.2s ease-in-out 2.2s infinite}
+@keyframes accendi{to{opacity:.9}}
+@keyframes brace{0%,100%{opacity:.9;transform:scale(1)}18%{opacity:.7;transform:scale(.97,.95)}35%{opacity:1;transform:scale(1.02,1.04)}52%{opacity:.78}70%{opacity:.95;transform:scale(1,1.02)}85%{opacity:.72}}
+
+.pagnotta{transform-box:fill-box;transform-origin:50% 100%;opacity:0;animation:sforna 1.5s cubic-bezier(.2,1.1,.3,1) 1.05s forwards}
+@keyframes sforna{from{opacity:0;transform:translateY(46px) scale(.9)}to{opacity:1;transform:none}}
+.pagnotta image{transition:transform .5s ease}
+
+.vapore{filter:blur(1.2px)}
+.vapore path{fill:none;stroke:#FFFDF2;stroke-width:4;stroke-linecap:round;opacity:0;animation:vapore 4.8s ease-in-out infinite;animation-delay:calc(2.4s + var(--v) * 1.5s)}
+@keyframes vapore{0%{opacity:0;transform:translateY(16px)}30%{opacity:1}100%{opacity:0;transform:translateY(-46px)}}
+
+.scintille circle{fill:var(--accent-2);transform-box:fill-box;opacity:0;animation:scintilla var(--t,3.4s) ease-out infinite;animation-delay:calc(2s + var(--dl,0s))}
+@keyframes scintilla{0%{opacity:0;transform:translate(0,0)}15%{opacity:1}100%{opacity:0;transform:translate(var(--x,8px),-120px)}}
+
+.scorri{position:absolute;left:50%;bottom:18px;z-index:2;translate:-50% 0;display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  font-family:var(--f-ui);font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);text-decoration:none;opacity:0;animation:entra 1s ease 2.4s forwards}
+.scorri i{width:1px;height:38px;background:var(--line);position:relative;overflow:hidden}
+.scorri i::after{content:"";position:absolute;left:0;top:-40%;width:1px;height:40%;background:var(--accent);animation:goccia 2s cubic-bezier(.7,0,.2,1) infinite}
+@keyframes goccia{to{top:100%}}
+
+/* pannellino per provare i titoli (solo nel concept) */
+.prova{position:fixed;right:16px;bottom:16px;z-index:200;display:flex;align-items:center;gap:.35rem;padding:.45rem .5rem .45rem .9rem;
+  background:var(--ink);color:var(--cream);font-family:var(--f-ui);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.prova button{all:unset;cursor:pointer;width:28px;height:28px;display:grid;place-items:center;border:1px solid rgba(255,249,214,.35);font-size:.75rem;letter-spacing:0}
+.prova button[aria-pressed="true"]{background:var(--cream);color:var(--ink)}
+
+@media (prefers-reduced-motion:reduce){
+  .forno *{animation-duration:.01ms!important;animation-iteration-count:1!important;animation-delay:0s!important}
+  .vapore,.scintille{display:none}
+}
+</style>
+
+<section class="forno" id="forno">
+  <canvas class="farina" aria-hidden="true"></canvas>
+  <span class="forno__lato" aria-hidden="true">Colledara · Teramo · Abruzzo</span>
+  <div class="wrap forno__grid">
+    <div class="stack-lg">
+      <span class="label entra" style="--dl:.15s">Panetta Bakery · Colledara</span>
+      <h1 class="lievita" id="titolo"></h1>
+      <p class="lead entra" style="--dl:1.15s">Pane, pasta all'uovo, pizze, dolci e caffè del Panificio di Cerchiara.<br>Via Nuova 7, Colledara (TE).</p>
+      <div class="hero__link entra" style="--dl:1.35s"><a class="btn" href="tel:+3908611640185">Chiama</a><a href="asportomenu/proposta.html?v=3">Il menu</a><a href="https://www.instagram.com/panetta_bakery_colledara/" target="_blank" rel="noopener">Instagram</a></div>
+    </div>
+
+    <div class="scena" id="scena" aria-hidden="true">
+      <svg viewBox="0 0 600 600">
+        <defs>
+          <filter id="sfuma" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="34"/></filter>
+          <clipPath id="bocca"><path d="M100 560 L100 340 A200 200 0 0 1 500 340 L500 560Z"/></clipPath>
+          <path id="giro-arco" d="M70 340 A230 230 0 0 1 530 340"/>
+        </defs>
+
+        <!-- bocca del forno: bagliore -->
+        <g class="strato" data-p="6">
+          <g clip-path="url(#bocca)">
+            <rect x="100" y="140" width="400" height="420" fill="#5A2923" opacity=".42"/>
+            <g class="bagliore" filter="url(#sfuma)">
+              <ellipse cx="300" cy="575" rx="210" ry="150" fill="#E8B07F"/>
+              <ellipse cx="300" cy="580" rx="130" ry="80" fill="#FFE3B3"/>
+            </g>
+          </g>
+        </g>
+
+        <!-- arco in mattoni -->
+        <g class="strato" data-p="10"><path class="fascia-arco" d="M28 560 L28 340 A272 272 0 0 1 572 340 L572 560 L500 560 L500 340 A200 200 0 0 0 100 340 L100 560Z"/></g>
+        <g class="strato arco" data-p="10">
+          <path pathLength="1" d="M40 560 L40 340 A260 260 0 0 1 560 340 L560 560"/>
+          <path class="fine" pathLength="1" d="M28 560 L28 340 A272 272 0 0 1 572 340 L572 560"/>
+          <path pathLength="1" d="M100 560 L100 340 A200 200 0 0 1 500 340 L500 560"/>
+          <line pathLength="1" x1="0" y1="560" x2="600" y2="560"/>
+          <line class="fine" pathLength="1" x1="20" y1="572" x2="580" y2="572"/>
+          <line class="mattone" style="--k:0" pathLength="1" x1="38.0" y1="340.0" x2="28.0" y2="340.0"/>
+          <line class="mattone" style="--k:1" pathLength="1" x1="39.0" y1="317.2" x2="29.0" y2="316.3"/>
+          <line class="mattone" style="--k:2" pathLength="1" x1="42.0" y1="294.5" x2="32.1" y2="292.8"/>
+          <line class="mattone" style="--k:3" pathLength="1" x1="46.9" y1="272.2" x2="37.3" y2="269.6"/>
+          <line class="mattone" style="--k:4" pathLength="1" x1="53.8" y1="250.4" x2="44.4" y2="247.0"/>
+          <line class="mattone" style="--k:5" pathLength="1" x1="62.5" y1="229.3" x2="53.5" y2="225.0"/>
+          <line class="mattone" style="--k:6" pathLength="1" x1="73.1" y1="209.0" x2="64.4" y2="204.0"/>
+          <line class="mattone" style="--k:7" pathLength="1" x1="85.4" y1="189.7" x2="77.2" y2="184.0"/>
+          <line class="mattone" style="--k:8" pathLength="1" x1="99.3" y1="171.6" x2="91.6" y2="165.2"/>
+          <line class="mattone" style="--k:9" pathLength="1" x1="114.7" y1="154.7" x2="107.7" y2="147.7"/>
+          <line class="mattone" style="--k:10" pathLength="1" x1="131.6" y1="139.3" x2="125.2" y2="131.6"/>
+          <line class="mattone" style="--k:11" pathLength="1" x1="149.7" y1="125.4" x2="144.0" y2="117.2"/>
+          <line class="mattone" style="--k:12" pathLength="1" x1="169.0" y1="113.1" x2="164.0" y2="104.4"/>
+          <line class="mattone" style="--k:13" pathLength="1" x1="189.3" y1="102.5" x2="185.0" y2="93.5"/>
+          <line class="mattone" style="--k:14" pathLength="1" x1="210.4" y1="93.8" x2="207.0" y2="84.4"/>
+          <line class="mattone" style="--k:15" pathLength="1" x1="232.2" y1="86.9" x2="229.6" y2="77.3"/>
+          <line class="mattone" style="--k:16" pathLength="1" x1="254.5" y1="82.0" x2="252.8" y2="72.1"/>
+          <line class="mattone" style="--k:17" pathLength="1" x1="277.2" y1="79.0" x2="276.3" y2="69.0"/>
+          <line class="mattone" style="--k:18" pathLength="1" x1="300.0" y1="78.0" x2="300.0" y2="68.0"/>
+          <line class="mattone" style="--k:19" pathLength="1" x1="322.8" y1="79.0" x2="323.7" y2="69.0"/>
+          <line class="mattone" style="--k:20" pathLength="1" x1="345.5" y1="82.0" x2="347.2" y2="72.1"/>
+          <line class="mattone" style="--k:21" pathLength="1" x1="367.8" y1="86.9" x2="370.4" y2="77.3"/>
+          <line class="mattone" style="--k:22" pathLength="1" x1="389.6" y1="93.8" x2="393.0" y2="84.4"/>
+          <line class="mattone" style="--k:23" pathLength="1" x1="410.7" y1="102.5" x2="415.0" y2="93.5"/>
+          <line class="mattone" style="--k:24" pathLength="1" x1="431.0" y1="113.1" x2="436.0" y2="104.4"/>
+          <line class="mattone" style="--k:25" pathLength="1" x1="450.3" y1="125.4" x2="456.0" y2="117.2"/>
+          <line class="mattone" style="--k:26" pathLength="1" x1="468.4" y1="139.3" x2="474.8" y2="131.6"/>
+          <line class="mattone" style="--k:27" pathLength="1" x1="485.3" y1="154.7" x2="492.3" y2="147.7"/>
+          <line class="mattone" style="--k:28" pathLength="1" x1="500.7" y1="171.6" x2="508.4" y2="165.2"/>
+          <line class="mattone" style="--k:29" pathLength="1" x1="514.6" y1="189.7" x2="522.8" y2="184.0"/>
+          <line class="mattone" style="--k:30" pathLength="1" x1="526.9" y1="209.0" x2="535.6" y2="204.0"/>
+          <line class="mattone" style="--k:31" pathLength="1" x1="537.5" y1="229.3" x2="546.5" y2="225.0"/>
+          <line class="mattone" style="--k:32" pathLength="1" x1="546.2" y1="250.4" x2="555.6" y2="247.0"/>
+          <line class="mattone" style="--k:33" pathLength="1" x1="553.1" y1="272.2" x2="562.7" y2="269.6"/>
+          <line class="mattone" style="--k:34" pathLength="1" x1="558.0" y1="294.5" x2="567.9" y2="292.8"/>
+          <line class="mattone" style="--k:35" pathLength="1" x1="561.0" y1="317.2" x2="571.0" y2="316.3"/>
+          <line class="mattone" style="--k:36" pathLength="1" x1="562.0" y1="340.0" x2="572.0" y2="340.0"/>
+          <text><textPath href="#giro-arco" startOffset="50%" text-anchor="middle">PANIFICIO DI CERCHIARA ✦ FORNAI DAL 1968</textPath></text>
+        </g>
+
+        <!-- scintille dalla brace -->
+        <g class="scintille" data-p="14">
+          <circle cx="210" cy="550" r="2" style="--t:3.6s;--dl:.2s;--x:-10px"/>
+          <circle cx="260" cy="552" r="1.4" style="--t:4.2s;--dl:1.4s;--x:6px"/>
+          <circle cx="305" cy="550" r="2.2" style="--t:3.2s;--dl:.7s;--x:-4px"/>
+          <circle cx="350" cy="553" r="1.5" style="--t:4.6s;--dl:2.1s;--x:12px"/>
+          <circle cx="395" cy="550" r="1.8" style="--t:3.8s;--dl:1s;--x:-8px"/>
+          <circle cx="235" cy="553" r="1.2" style="--t:5s;--dl:2.8s;--x:10px"/>
+          <circle cx="372" cy="551" r="1.3" style="--t:4.4s;--dl:3.3s;--x:-12px"/>
+        </g>
+
+        <!-- il logo esce dal forno, con il vapore -->
+        <g class="strato" data-p="22">
+          <g class="vapore">
+            <path style="--v:0" d="M262 222 C252 206 272 196 262 180 S272 156 262 142"/>
+            <path style="--v:1" d="M300 214 C290 198 310 188 300 172 S310 148 300 134"/>
+            <path style="--v:2" d="M338 222 C328 206 348 196 338 180 S348 156 338 142"/>
+          </g>
+          <g class="pagnotta"><image href="assets/img/logo-bakery.svg" x="140" y="232" width="320" height="320"/></g>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <a class="scorri" href="#chi-siamo">Scorri<i></i></a>
+</section>
+
+<div class="prova" role="group" aria-label="Prova titolo">Titolo
+  <button type="button" data-t="0" aria-pressed="true">A</button>
+  <button type="button" data-t="1" aria-pressed="false">B</button>
+  <button type="button" data-t="2" aria-pressed="false">C</button>
+</div>
+
+<script>
+(function () {
+  var titoli = [
+    ['Tre generazioni di forno.', 'Un bancone a Colledara.'],
+    ['Il pane di famiglia,', 'appena sfornato.'],
+    ['Dal 1968 si impasta.', 'Oggi anche al bancone.']
+  ];
+  var h = document.getElementById('titolo');
+  function parole(t, d) {
+    return t.split(' ').map(function (w) { return '<span class="w" style="--d:' + (d.n++) + '">' + w + '</span>'; }).join(' ');
+  }
+  function mostra(i) {
+    var d = { n: 0 };
+    h.innerHTML = parole(titoli[i][0], d) + '<br><em>' + parole(titoli[i][1], d) + '</em>';
+    document.querySelectorAll('.prova button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.t == i); });
+  }
+  mostra(0);
+  document.querySelectorAll('.prova button').forEach(function (b) { b.onclick = function () { mostra(+b.dataset.t); }; });
+
+  // profondità: gli strati seguono il mouse a velocità diverse
+  var hero = document.getElementById('forno'), strati = [].slice.call(document.querySelectorAll('.strato, .scintille'));
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  hero.addEventListener('pointermove', function (e) {
+    var r = hero.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+    strati.forEach(function (s) { var p = +s.dataset.p; s.style.transform = 'translate(' + (-x * p) + 'px,' + (-y * p) + 'px)'; });
+  });
+  hero.addEventListener('pointerleave', function () { strati.forEach(function (s) { s.style.transform = ''; }); });
+
+  // allo scroll il logo "rientra" leggermente e il forno si attenua
+  var scena = document.getElementById('scena');
+  window.addEventListener('scroll', function () {
+    var k = Math.min(1, window.scrollY / hero.offsetHeight);
+    scena.style.transform = 'translateY(' + (k * 60) + 'px) scale(' + (1 - k * .06) + ')';
+    scena.style.opacity = 1 - k * .7;
+  }, { passive: true });
+})();
+</script>
+
+
+<div class="nastro " aria-hidden="true"><div class="nastro__track"><span>Pane</span><i>✦</i><span>Pasta all&#x27;uovo</span><i>✦</i><span>Pizze</span><i>✦</i><span>Caffetteria</span><i>✦</i><span>Primi piatti</span><i>✦</i><span>Aperitivi</span><i>✦</i><span>Pane</span><i>✦</i><span>Pasta all&#x27;uovo</span><i>✦</i><span>Pizze</span><i>✦</i><span>Caffetteria</span><i>✦</i><span>Primi piatti</span><i>✦</i><span>Aperitivi</span><i>✦</i><span>Pane</span><i>✦</i><span>Pasta all&#x27;uovo</span><i>✦</i><span>Pizze</span><i>✦</i><span>Caffetteria</span><i>✦</i><span>Primi piatti</span><i>✦</i><span>Aperitivi</span><i>✦</i><span>Pane</span><i>✦</i><span>Pasta all&#x27;uovo</span><i>✦</i><span>Pizze</span><i>✦</i><span>Caffetteria</span><i>✦</i><span>Primi piatti</span><i>✦</i><span>Aperitivi</span><i>✦</i></div></div>
+
+<section class="sez sez--tinta" id="chi-siamo"><div class="wrap chi">
+  <div class="chi__titolo rv"><span class="label">Chi siamo</span><h2>Bakery <em>premium quality</em></h2></div>
+  <figure class="foto chi__foto rv" style="--ar:4/5" data-par="0.06" data-foto="home-chi-siamo.jpg"><img src="assets/img/foto/bakery-primo.jpg" alt="Un primo piatto della Panetta Bakery" loading="lazy" decoding="async"></figure>
+  <div class="chi__testo rv" style="--i:1"><p class="giustificato capolettera">La Bakery nasce come punto vendita del Panificio di Cerchiara, con lo scopo di portare la tradizione ed il sapere a confronto con l'innovazione, in un percorso di qualità e sperimentazione.</p><div class="btns"><a class="btn" href="asportomenu/proposta.html?v=3">Menu asporto</a><a class="btn btn--line" href="panificiodicerchiara/proposta.html?v=3">Il Panificio</a></div></div>
+</div></section>
+
+<section class="sez" id="servizi"><div class="wrap stack-lg">
+  <div class="ornato rv" aria-hidden="true"><svg viewBox="0 0 120 30"><g><path pathLength="1" d="M62 15 L112 15"/><path pathLength="1" d="M68 15 Q69 7 77 6 Q76 13 68 15Z"/><path pathLength="1" d="M68 15 Q69 23 77 24 Q76 17 68 15Z"/><path pathLength="1" d="M77 6 L83 2"/><path pathLength="1" d="M77 24 L83 28"/><path pathLength="1" d="M76 15 Q77 7 85 6 Q84 13 76 15Z"/><path pathLength="1" d="M76 15 Q77 23 85 24 Q84 17 76 15Z"/><path pathLength="1" d="M85 6 L91 2"/><path pathLength="1" d="M85 24 L91 28"/><path pathLength="1" d="M84 15 Q85 7 93 6 Q92 13 84 15Z"/><path pathLength="1" d="M84 15 Q85 23 93 24 Q92 17 84 15Z"/><path pathLength="1" d="M93 6 L99 2"/><path pathLength="1" d="M93 24 L99 28"/><path pathLength="1" d="M92 15 Q93 7 101 6 Q100 13 92 15Z"/><path pathLength="1" d="M92 15 Q93 23 101 24 Q100 17 92 15Z"/><path pathLength="1" d="M101 6 L107 2"/><path pathLength="1" d="M101 24 L107 28"/><path pathLength="1" d="M100 15 Q101 7 109 6 Q108 13 100 15Z"/><path pathLength="1" d="M100 15 Q101 23 109 24 Q108 17 100 15Z"/><path pathLength="1" d="M109 6 L115 2"/><path pathLength="1" d="M109 24 L115 28"/><path pathLength="1" d="M108 15 Q112 10 118 15 Q112 20 108 15Z"/></g><g transform="translate(120 0) scale(-1 1)"><path pathLength="1" d="M62 15 L112 15"/><path pathLength="1" d="M68 15 Q69 7 77 6 Q76 13 68 15Z"/><path pathLength="1" d="M68 15 Q69 23 77 24 Q76 17 68 15Z"/><path pathLength="1" d="M77 6 L83 2"/><path pathLength="1" d="M77 24 L83 28"/><path pathLength="1" d="M76 15 Q77 7 85 6 Q84 13 76 15Z"/><path pathLength="1" d="M76 15 Q77 23 85 24 Q84 17 76 15Z"/><path pathLength="1" d="M85 6 L91 2"/><path pathLength="1" d="M85 24 L91 28"/><path pathLength="1" d="M84 15 Q85 7 93 6 Q92 13 84 15Z"/><path pathLength="1" d="M84 15 Q85 23 93 24 Q92 17 84 15Z"/><path pathLength="1" d="M93 6 L99 2"/><path pathLength="1" d="M93 24 L99 28"/><path pathLength="1" d="M92 15 Q93 7 101 6 Q100 13 92 15Z"/><path pathLength="1" d="M92 15 Q93 23 101 24 Q100 17 92 15Z"/><path pathLength="1" d="M101 6 L107 2"/><path pathLength="1" d="M101 24 L107 28"/><path pathLength="1" d="M100 15 Q101 7 109 6 Q108 13 100 15Z"/><path pathLength="1" d="M100 15 Q101 23 109 24 Q108 17 100 15Z"/><path pathLength="1" d="M109 6 L115 2"/><path pathLength="1" d="M109 24 L115 28"/><path pathLength="1" d="M108 15 Q112 10 118 15 Q112 20 108 15Z"/></g></svg></div>
+  <div class="testata rv"><span class="label">Panetta Bakery</span><h2>I nostri <em>servizi</em></h2></div>
+  <div class="tessere"><a class="tessera rv" style="--i:0" href="#dove"><span class="tessera__t">Consumazione sul posto</span><span class="tessera__go" aria-hidden="true">→</span></a><a class="tessera rv" style="--i:1" href="asportomenu/proposta.html?v=3"><span class="tessera__t">Asporto</span><span class="tessera__go" aria-hidden="true">→</span></a><a class="tessera rv" style="--i:2" href="asportomenu/proposta.html?v=3#pane"><span class="tessera__t">Pane</span><span class="tessera__go" aria-hidden="true">→</span></a><a class="tessera rv" style="--i:3" href="asportomenu/proposta.html?v=3#pasta"><span class="tessera__t">Pasta all&#x27;uovo</span><span class="tessera__go" aria-hidden="true">→</span></a><a class="tessera rv" style="--i:4" href="asportomenu/proposta.html?v=3#pizza"><span class="tessera__t">Pizze</span><span class="tessera__go" aria-hidden="true">→</span></a><a class="tessera rv" style="--i:5" href="asportomenu/proposta.html?v=3#caffetteria"><span class="tessera__t">Caffetteria</span><span class="tessera__go" aria-hidden="true">→</span></a><a class="tessera rv" style="--i:6" href="asportomenu/proposta.html?v=3#primi"><span class="tessera__t">Primi piatti</span><span class="tessera__go" aria-hidden="true">→</span></a><a class="tessera rv" style="--i:7" href="asportomenu/proposta.html?v=3"><span class="tessera__t">Aperitivi</span><span class="tessera__go" aria-hidden="true">→</span></a></div>
+  <div class="galleria"><figure class="foto rv" style="--i:0" data-foto="home-g-1.jpg"><img src="assets/img/foto/bakery-cupcake.jpg" alt="Cupcake della Panetta Bakery" loading="lazy" decoding="async"></figure><figure class="foto rv" style="--i:1" data-foto="home-g-2.jpg"><img src="assets/img/foto/bakery-crostata.jpg" alt="Crostata al pistacchio" loading="lazy" decoding="async"></figure><figure class="foto rv" style="--i:2" data-foto="home-g-3.jpg"><img src="assets/img/foto/bakery-pizza-calzone.jpg" alt="Pizza margherita e calzone fritto" loading="lazy" decoding="async"></figure><figure class="foto rv" style="--i:3" data-foto="home-g-4.jpg"><img src="assets/img/foto/bakery-biscotti.jpg" alt="Biscotti, cantucci e dolci da forno" loading="lazy" decoding="async"></figure><figure class="foto rv" style="--i:4" data-foto="home-g-5.jpg"><img src="assets/img/foto/bakery-lasagna.jpg" alt="Lasagna al forno" loading="lazy" decoding="async"></figure></div>
+</div></section>
+
+<div class="nastro nastro--vuoto" aria-hidden="true"><div class="nastro__track"><span>Eh sì, tante cose buone</span><i>✦</i><span>Eh sì, tante cose buone</span><i>✦</i><span>Eh sì, tante cose buone</span><i>✦</i><span>Eh sì, tante cose buone</span><i>✦</i></div></div>
+
+<section class="sez sez--scura catering" id="catering"><div class="wrap catering__grid">
+  <div class="catering__arte rv"><svg class="catering__badge" viewBox="0 0 500 500" role="img" aria-label="Catering Panetta Bakery">
+  <g class="catering__raggi" stroke="#E8B07F" stroke-linecap="round"><line x1="400.0" y1="250.0" x2="495.0" y2="250.0" stroke-width="3"/><line x1="397.7" y1="276.0" x2="491.3" y2="292.5" stroke-width="7"/><line x1="391.0" y1="301.3" x2="480.2" y2="333.8" stroke-width="3"/><line x1="379.9" y1="325.0" x2="462.2" y2="372.5" stroke-width="7"/><line x1="364.9" y1="346.4" x2="437.7" y2="407.5" stroke-width="3"/><line x1="346.4" y1="364.9" x2="407.5" y2="437.7" stroke-width="7"/><line x1="325.0" y1="379.9" x2="372.5" y2="462.2" stroke-width="3"/><line x1="301.3" y1="391.0" x2="333.8" y2="480.2" stroke-width="7"/><line x1="276.0" y1="397.7" x2="292.5" y2="491.3" stroke-width="3"/><line x1="250.0" y1="400.0" x2="250.0" y2="495.0" stroke-width="7"/><line x1="224.0" y1="397.7" x2="207.5" y2="491.3" stroke-width="3"/><line x1="198.7" y1="391.0" x2="166.2" y2="480.2" stroke-width="7"/><line x1="175.0" y1="379.9" x2="127.5" y2="462.2" stroke-width="3"/><line x1="153.6" y1="364.9" x2="92.5" y2="437.7" stroke-width="7"/><line x1="135.1" y1="346.4" x2="62.3" y2="407.5" stroke-width="3"/><line x1="120.1" y1="325.0" x2="37.8" y2="372.5" stroke-width="7"/><line x1="109.0" y1="301.3" x2="19.8" y2="333.8" stroke-width="3"/><line x1="102.3" y1="276.0" x2="8.7" y2="292.5" stroke-width="7"/><line x1="100.0" y1="250.0" x2="5.0" y2="250.0" stroke-width="3"/><line x1="102.3" y1="224.0" x2="8.7" y2="207.5" stroke-width="7"/><line x1="109.0" y1="198.7" x2="19.8" y2="166.2" stroke-width="3"/><line x1="120.1" y1="175.0" x2="37.8" y2="127.5" stroke-width="7"/><line x1="135.1" y1="153.6" x2="62.3" y2="92.5" stroke-width="3"/><line x1="153.6" y1="135.1" x2="92.5" y2="62.3" stroke-width="7"/><line x1="175.0" y1="120.1" x2="127.5" y2="37.8" stroke-width="3"/><line x1="198.7" y1="109.0" x2="166.2" y2="19.8" stroke-width="7"/><line x1="224.0" y1="102.3" x2="207.5" y2="8.7" stroke-width="3"/><line x1="250.0" y1="100.0" x2="250.0" y2="5.0" stroke-width="7"/><line x1="276.0" y1="102.3" x2="292.5" y2="8.7" stroke-width="3"/><line x1="301.3" y1="109.0" x2="333.8" y2="19.8" stroke-width="7"/><line x1="325.0" y1="120.1" x2="372.5" y2="37.8" stroke-width="3"/><line x1="346.4" y1="135.1" x2="407.5" y2="62.3" stroke-width="7"/><line x1="364.9" y1="153.6" x2="437.7" y2="92.5" stroke-width="3"/><line x1="379.9" y1="175.0" x2="462.2" y2="127.5" stroke-width="7"/><line x1="391.0" y1="198.7" x2="480.2" y2="166.2" stroke-width="3"/><line x1="397.7" y1="224.0" x2="491.3" y2="207.5" stroke-width="7"/></g>
+  <circle cx="250" cy="250" r="128" fill="#904B4B" stroke="#FFF9D6" stroke-width="3"/>
+  <g class="catering__punti" fill="#FFF9D6"><circle cx="388.0" cy="250.0" r="5.2"/><circle cx="386.8" cy="268.0" r="5.2"/><circle cx="383.3" cy="285.7" r="5.2"/><circle cx="377.5" cy="302.8" r="5.2"/><circle cx="369.5" cy="319.0" r="5.2"/><circle cx="359.5" cy="334.0" r="5.2"/><circle cx="347.6" cy="347.6" r="5.2"/><circle cx="334.0" cy="359.5" r="5.2"/><circle cx="319.0" cy="369.5" r="5.2"/><circle cx="302.8" cy="377.5" r="5.2"/><circle cx="285.7" cy="383.3" r="5.2"/><circle cx="268.0" cy="386.8" r="5.2"/><circle cx="250.0" cy="388.0" r="5.2"/><circle cx="232.0" cy="386.8" r="5.2"/><circle cx="214.3" cy="383.3" r="5.2"/><circle cx="197.2" cy="377.5" r="5.2"/><circle cx="181.0" cy="369.5" r="5.2"/><circle cx="166.0" cy="359.5" r="5.2"/><circle cx="152.4" cy="347.6" r="5.2"/><circle cx="140.5" cy="334.0" r="5.2"/><circle cx="130.5" cy="319.0" r="5.2"/><circle cx="122.5" cy="302.8" r="5.2"/><circle cx="116.7" cy="285.7" r="5.2"/><circle cx="113.2" cy="268.0" r="5.2"/><circle cx="112.0" cy="250.0" r="5.2"/><circle cx="113.2" cy="232.0" r="5.2"/><circle cx="116.7" cy="214.3" r="5.2"/><circle cx="122.5" cy="197.2" r="5.2"/><circle cx="130.5" cy="181.0" r="5.2"/><circle cx="140.5" cy="166.0" r="5.2"/><circle cx="152.4" cy="152.4" r="5.2"/><circle cx="166.0" cy="140.5" r="5.2"/><circle cx="181.0" cy="130.5" r="5.2"/><circle cx="197.2" cy="122.5" r="5.2"/><circle cx="214.3" cy="116.7" r="5.2"/><circle cx="232.0" cy="113.2" r="5.2"/><circle cx="250.0" cy="112.0" r="5.2"/><circle cx="268.0" cy="113.2" r="5.2"/><circle cx="285.7" cy="116.7" r="5.2"/><circle cx="302.8" cy="122.5" r="5.2"/><circle cx="319.0" cy="130.5" r="5.2"/><circle cx="334.0" cy="140.5" r="5.2"/><circle cx="347.6" cy="152.4" r="5.2"/><circle cx="359.5" cy="166.0" r="5.2"/><circle cx="369.5" cy="181.0" r="5.2"/><circle cx="377.5" cy="197.2" r="5.2"/><circle cx="383.3" cy="214.3" r="5.2"/><circle cx="386.8" cy="232.0" r="5.2"/></g>
+  <line x1="150" y1="212" x2="350" y2="212" stroke="#FFF9D6" stroke-width="3"/>
+  <line x1="150" y1="292" x2="350" y2="292" stroke="#FFF9D6" stroke-width="3"/>
+  <text x="250" y="196" text-anchor="middle" fill="#E8B07F" font-family="Bree Serif, Georgia, serif" font-size="22" letter-spacing="4">PANETTA</text>
+  <text x="250" y="265" text-anchor="middle" fill="#FFF9D6" font-family="Ultra, Georgia, serif" font-size="46">Catering</text>
+  <text x="250" y="325" text-anchor="middle" fill="#E8B07F" font-family="Bree Serif, Georgia, serif" font-size="20" letter-spacing="4">BAKERY</text>
+</svg></div>
+  <div class="stack-lg rv" style="--i:1">
+    <span class="label">Panetta Bakery</span>
+    <h2 class="catering__titolo">Catering</h2>
+    <p class="lead giustificato catering__testo">Per le tue occasioni portiamo in tavola i prodotti del Panificio di Cerchiara: pizze e fritti, pane, dolci e biscotti della tradizione abruzzese, preparati su richiesta. Raccontaci il tuo evento e costruiamo insieme la proposta giusta.</p>
+    <p class="lead">Contattaci per informazioni e preventivi.</p>
+    <div class="btns"><a class="btn btn--crema" href="tel:+3908611640185">Chiama 0861 1640185</a><a class="btn btn--line" href="mailto:panetta.social@gmail.com?subject=Catering">Scrivici una mail</a></div>
+  </div>
+</div></section>
+
+
+<section class="sez" id="dove"><div class="wrap due">
+  <div class="stack-lg rv">
+    <span class="label">Dove siamo</span>
+    <h2>Ma dove <em>le trovo?</em></h2>
+    <dl class="info">
+      <dt>Indirizzo</dt><dd>Via Nuova 7, Colledara (TE), Abruzzo</dd>
+      <dt>Telefono</dt><dd><a href="tel:+3908611640185">0861 1640185</a></dd>
+      <dt>Email</dt><dd><a href="mailto:panetta.social@gmail.com">panetta.social@gmail.com</a></dd>
+      <dt>Instagram</dt><dd><a href="https://www.instagram.com/panetta_bakery_colledara/" target="_blank" rel="noopener">@panetta_bakery_colledara</a></dd>
+    </dl>
+    <div class="btns"><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Panetta+Bakery+Via+Nuova+7+Colledara" target="_blank" rel="noopener">Apri in Google Maps</a><a class="btn btn--line" href="tel:+3908611640185">Chiamaci</a></div>
+  </div>
+  <figure class="foto rv" style="--ar:4/3;--i:1" data-par="0.05" data-foto="home-dove.jpg"><img src="assets/img/foto/bakery-interno.jpg" alt="La sala e il bancone della Panetta Bakery a Colledara" loading="lazy" decoding="async"></figure>
+</div></section>
+
+<section class="sez sez--tinta"><div class="wrap fascia fascia--1968 rv">
+  <svg class="sigillo" viewBox="0 0 120 120" aria-hidden="true">
+    <defs><path id="giro2" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs>
+    <circle cx="60" cy="60" r="58" fill="none" stroke="currentColor" stroke-width="1"/>
+    <circle cx="60" cy="60" r="36" fill="none" stroke="currentColor" stroke-width="1"/>
+    <g class="sigillo__giro"><text font-family="EB Garamond, serif" font-size="9.5" letter-spacing="2"><textPath href="#giro2" textLength="287" lengthAdjust="spacing">FORNAI DAL 1968 ✦ CERCHIARA ✦ ABRUZZO ✦</textPath></text></g>
+    <text x="60" y="67" text-anchor="middle" font-family="Cormorant Garamond, serif" font-style="italic" font-size="24">1968</text>
+  </svg>
+  <div class="stack"><span class="label">Il Panificio</span><h2>Panificio di Cerchiara, <em>fornai dal 1968.</em></h2></div>
+  <a class="btn btn--line" href="panificiodicerchiara/proposta.html?v=3">Scopri il Panificio</a>
+</div></section>
+
+</main>
+<footer class="footer" id="contatti"><div class="wrap">
+  <div class="footer__grid">
+    <div class="stack"><div class="footer__loghi"><img src="assets/img/logo-bakery-chiaro.svg" alt="Panetta Bakery"><img src="assets/img/logo-panificio-chiaro.png" alt="Panificio di Cerchiara"></div><p><a href="mailto:panetta.social@gmail.com">panetta.social@gmail.com</a><br><a href="https://www.instagram.com/panetta_bakery_colledara/" target="_blank" rel="noopener">Instagram</a></p></div>
+    <div class="stack"><span class="label">Panetta Bakery</span><address>Via Nuova 7<br>Colledara (TE), Abruzzo</address><p><a href="tel:+3908611640185">0861 1640185</a></p></div>
+    <div class="stack"><span class="label">Panificio di Cerchiara</span><address>Via del Mulino, Cerchiara<br>Isola del Gran Sasso (TE)</address><p><a href="tel:+393348919180">334 8919180</a></p></div>
+  </div>
+  <div class="footer__base">
+    <span>© Panetta Bakery · Panificio di Cerchiara</span>
+    <nav aria-label="Note legali"><a href="https://www.iubenda.com/privacy-policy/91127097" target="_blank" rel="noopener">Privacy Policy</a><a href="https://www.iubenda.com/privacy-policy/91127097/cookie-policy" target="_blank" rel="noopener">Cookie Policy</a><a href="https://www.iubenda.com/termini-e-condizioni/91127097" target="_blank" rel="noopener">Termini e Condizioni</a></nav>
+  </div>
+</div></footer>
+
+<script src="assets/site.js" defer></script>
+<script src="assets/classico.js?v=3" defer></script>
+</body>
+</html>
