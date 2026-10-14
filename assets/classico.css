@@ -311,3 +311,28 @@ h1 em,h2 em,.catering__titolo,.menu-top h1{font-style:italic;font-weight:700;fon
 
 @media (prefers-reduced-motion:reduce){.lievita__frase span{animation:none!important;opacity:1;transform:none;font-weight:800;font-variation-settings:"SOFT" 100,"WONK" 0,"opsz" 144}.lievita__sotto{opacity:1}}
 @media (max-width:640px){.lievita__frase em{display:block;margin-top:.1em}.lievita__frase{font-size:clamp(2.2rem,11vw,3rem)}}
+
+/* ===== MOBILE (telefono) ===== */
+@media (max-width:640px){
+  /* hero: respiro tra titolo e indirizzo */
+  .ht-testo h1{margin-bottom:.4rem}
+  .ht-testo .ht-info{margin-top:1.4rem}
+  /* testi: niente giustificato con sillabe spezzate */
+  .giustificato{text-align:left;hyphens:manual;-webkit-hyphens:manual;line-height:1.7}
+  /* pulsanti a tutta larghezza, uguali */
+  .btns{flex-direction:column;align-items:stretch}
+  .btns .btn{width:100%;justify-content:center;text-align:center}
+  /* servizi: elenco a righe invece di riquadri spezzati */
+  .tessere{grid-template-columns:1fr!important}
+  .tessera{display:grid;grid-template-columns:2.4rem 1fr auto;align-items:center;gap:.6rem;min-height:0;padding:1rem .2rem;border-right:0!important}
+  .tessera__t{hyphens:manual;-webkit-hyphens:manual;padding-right:0;font-size:1.2rem}
+  .tessera__go{position:static}
+  /* catering: timbro più piccolo, non occupa tutto lo schermo */
+  .catering__badge{width:min(58%,210px)}
+  /* piccola bakery: prodotti in colonna, foto meno alte */
+  .prodotti{flex-direction:column;align-items:center;gap:.2rem}
+  .prodotti i{display:none}
+  .a__col .foto{--ar:3/2}
+  .a__testa{margin-bottom:1.6rem}
+  .lievita__sotto{letter-spacing:.16em}
+}
